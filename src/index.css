@@ -38,7 +38,7 @@
 /* 4. Your existing custom classes (if needed) */
 @layer base {
     html { scroll-behavior: smooth; }
-    body {
-        @apply bg-dark-900 text-gray-200 antialiased;
-    }
+    /*body {*/
+    /*    @apply bg-gray-100 text-black antialiased;*/
+    /*}*/
 }
