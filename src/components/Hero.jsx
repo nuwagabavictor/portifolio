@@ -1,5 +1,11 @@
 import { Mail, ArrowRight } from 'lucide-react';
 
+const contacts = [
+    { Icon: Mail, href: 'mailto:nuwagabavictor197@gmail.com' },
+    { Icon: Mail, href: 'https://github.com/nuwagabavictor' },
+    { Icon: Mail, href: 'https://linkedin.com/in/victor-nuwagaba-047487248' },
+];
+
 const Hero = () => {
     return (
         <section
@@ -7,15 +13,15 @@ const Hero = () => {
             className="min-h-screen flex items-center px-6 pt-28 relative overflow-hidden"
         >
             {/* Background glow */}
-            <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-primary-600/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-primary-800/20 rounded-full blur-3xl" />
+            <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-primary-600 rounded-full blur-3xl" />
+            <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-primary-800 rounded-full blur-3xl" />
 
             <div className="container-custom grid lg:grid-cols-2 gap-16 items-center relative z-10">
                 {/* Text */}
                 <div className="animate-slide-up">
                     <p className="text-primary-400 font-semibold mb-3">👋 Hello, I'm</p>
                     <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-3">
-                        Your Name
+                        Nuwagaba Victor
                     </h1>
                     <h2 className="text-2xl md:text-3xl text-primary-400 font-semibold mb-6">
                         Full-Stack Developer
@@ -35,11 +41,7 @@ const Hero = () => {
                     </div>
 
                     <div className="flex gap-5">
-                        {[
-                            { Icon: Mail, href: 'https://github.com/yourusername' },
-                            { Icon: Mail, href: 'https://linkedin.com/in/yourprofile' },
-                            { Icon: Mail, href: 'mailto:you@email.com' },
-                        ].map(({ Icon, href }, i) => (
+                        { contacts.map(({ Icon, href }, i) => (
                             <a
                                 key={i}
                                 href={href}

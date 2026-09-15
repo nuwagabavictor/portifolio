@@ -1,10 +1,10 @@
 import { Mail, MapPin } from 'lucide-react';
 
 const contacts = [
-    { Icon: Mail, label: 'Email', value: 'you@email.com', href: 'mailto:you@email.com' },
-    { Icon: Mail, label: 'GitHub', value: '@yourusername', href: 'https://github.com/yourusername' },
-    { Icon: Mail, label: 'LinkedIn', value: 'Your Name', href: 'https://linkedin.com/in/yourprofile' },
-    { Icon: MapPin, label: 'Location', value: 'Your City, Country', href: null },
+    { Icon: Mail, label: 'Email', value: 'nuwagabavictor197@gmail.com', href: 'mailto:nuwagabavictor197@gmail.com' },
+    { Icon: Mail, label: 'GitHub', value: '@nuwagabavictor', href: 'https://github.com/nuwagabavictor' },
+    { Icon: Mail, label: 'LinkedIn', value: 'Nuwagaba Victor', href: 'https://linkedin.com/in/victor-nuwagaba-047487248' },
+    { Icon: MapPin, label: 'Location', value: 'Kampala, Uganda', href: null },
 ];
 
 const Contact = () => {

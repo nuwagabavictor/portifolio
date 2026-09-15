@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Code2 } from 'lucide-react';
 
 const links = [
-    { label: 'Home', href: '#home' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: 'home' },
+    { label: 'Skills', href: 'skills' },
+    { label: 'Projects', href: 'projects' },
+    { label: 'Contact', href: 'contact' },
 ];
 
 const Navbar = () => {
@@ -26,7 +26,7 @@ const Navbar = () => {
         >
             <div className="container-custom px-6 flex items-center justify-between">
                 <a
-                    href="#home"
+                    href="home"
                     className="flex items-center gap-2 text-primary-400 font-bold text-xl"
                 >
                     <Code2 size={26} />
