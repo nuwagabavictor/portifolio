@@ -4,7 +4,7 @@ import {
     Globe,
     Network,
     Code2,
-    Cloud,
+    Cloud, Mail, MessageCircle, MapPin,
 } from "lucide-react";
 import img from "../assets/img.png"
 import img2 from "../assets/img_1.png"
@@ -13,7 +13,7 @@ import img2 from "../assets/img_1.png"
 export const personalInfo = {
     name: "Nuwagaba Victor",
     role: "Full-Stack Developer",
-    bio: "Specializing in scalable backend architectures, database optimization, robust networking protocols, and modern frontend interfaces.",
+    bio: "Specializing in scalable backend architectures, database optimization, robust networking protocols, microservices and modern frontend interfaces.",
     email: "nuwagabavictor197@gmail.com",
     github: "https://github.com/nuwagabavictor",
     linkedin: "https://linkedin.com/in/victor-nuwagaba-047487248",
@@ -23,7 +23,7 @@ export const skillGroups = [
     {
         title: "Backend Development",
         icon: Server,
-        description: "Building scalable REST APIs, enterprise systems and fintech platforms.",
+        description: "Building scalable REST APIs, enterprise systems, microservices and fintech platforms.",
         skills: [
             "Java",
             "Spring Boot",
@@ -246,5 +246,47 @@ export const testimonials = [
         initials: "CN",
         message:
             "Victor understood our needs and translated them into a working solution. His attention to detail and willingness to solve problems made the project much easier to deliver.",
+    },
+];
+
+export const coreTechnologies = [
+    "Java",
+    "Spring Boot",
+    "Apache Fineract",
+    "Node.js",
+    "TypeScript",
+    "React",
+    "Angular",
+    "Tailwind CSS",
+    "Kotlin",
+    "Jetpack Compose",
+    "MariaDB",
+    "PostgreSQL",
+    "Docker",
+    "Linux",
+    "Nginx",
+    "Git",
+    "GitHub",
+
+]
+
+export const contacts = [
+    {
+        icon: Mail,
+        label: "Email",
+        value: personalInfo.email,
+        href: `mailto:${personalInfo.email}`,
+    },
+    {
+        icon: MessageCircle,
+        label: "WhatsApp",
+        value: "+256 770 7599 15 / +256 742 292 621",
+        href: "https://wa.me/256770759915",
+    },
+    {
+        icon: MapPin,
+        label: "Location",
+        value: "Kampala, Uganda",
+        href: null,
     },
 ];

@@ -7,7 +7,7 @@ import {
     Send,
 } from "lucide-react";
 
-const ContactForm = ({ darkMode }) => {
+const ContactForm = () => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -67,7 +67,7 @@ const ContactForm = ({ darkMode }) => {
             return;
         }
 
-        const whatsappNumber = "25677079915";
+        const whatsappNumber = "256770759915";
 
         const message = `
 *New Portfolio Contact*
@@ -113,149 +113,87 @@ ${formData.message}
         setErrors({});
     };
 
-    const inputClass = `
-        w-full
-        rounded-xl
-        border
-        px-4
-        py-3
-        outline-none
-        transition-all
-        duration-300
-        focus:border-blue-500
-        focus:ring-2
-        focus:ring-blue-500/20
-    `;
+    const inputClass = `w-full rounded-xl border border-border bg-background px-4 py-3 text-heading placeholder:text-muted outline-none transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20 `;
 
     return (
-        <div
-            className={`rounded-3xl border p-6 md:p-8 shadow-xl transition-colors duration-500 ${
-                darkMode
-                    ? "bg-dark-card border-dark-border"
-                    : "bg-light-card border-light-border"
-            }`}
-        >
+        <div className="rounded-3xl border border-border bg-surface p-5 shadow-xl shadow-black/5 transition-colors duration-500 sm:p-6 md:p-8 ">
             {status === "success" ? (
                 <motion.div
-                    initial={{
-                        opacity: 0,
-                        y: 15,
-                    }}
-                    animate={{
-                        opacity: 1,
-                        y: 0,
-                    }}
-                    transition={{
-                        duration: 0.3,
-                    }}
-                    className="flex min-h-[500px] flex-col items-center justify-center text-center"
+                    initial={{opacity: 0, y: 15,}}
+                    animate={{opacity: 1, y: 0,}}
+                    transition={{duration: 0.3,}}
+                    className="flex min-h-[450px] flex-col items-center justify-center text-center "
                 >
-                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-500/10 text-green-500">
+                    {/* Success Icon */}
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary">
                         <CheckCircle size={42} />
                     </div>
 
-                    <h3
-                        className={`mt-6 text-2xl font-bold ${
-                            darkMode
-                                ? "text-dark-heading"
-                                : "text-light-heading"
-                        }`}
-                    >
+                    {/* Title */}
+                    <h3 className="mt-6 text-2xl font-bold text-heading">
                         Message Ready
                     </h3>
 
-                    <p className="mt-3 max-w-md text-slate-500 leading-7">
+                    {/* Description */}
+                    <p className="mt-3 max-w-md leading-7 text-paragraph">
                         WhatsApp has opened with your message prepared and
                         ready to send. Just review it and tap send.
                     </p>
 
-                    <div
-                        className={`mt-6 flex items-center gap-3 rounded-2xl border px-5 py-4 ${
-                            darkMode
-                                ? "border-green-500/20 bg-green-500/5"
-                                : "border-green-500/20 bg-green-50"
-                        }`}
-                    >
-                        <MessageCircle
-                            size={22}
-                            className="text-green-500"
-                        />
+                    {/* WhatsApp Notice */}
+                    <div className="mt-6 flex items-center gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-5 py-4">
+                        <MessageCircle size={22} className="shrink-0 text-primary" />
 
-                        <p className="text-sm font-medium text-green-500">
+                        <p className="text-sm font-medium text-primary">
                             Continue the conversation on WhatsApp
                         </p>
                     </div>
 
+                    {/* Reset */}
                     <button
                         type="button"
                         onClick={handleReset}
-                        className="
-                            mt-8
-                            inline-flex
-                            items-center
-                            gap-2
-                            rounded-xl
-                            bg-blue-600
-                            px-6
-                            py-3
-                            font-semibold
-                            text-white
-                            shadow-lg
-                            shadow-blue-500/20
-                            transition-all
-                            duration-300
-                            hover:-translate-y-0.5
-                            hover:bg-blue-700
-                        "
+                        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
                     >
                         <Send size={18} />
-
                         Send Another Message
                     </button>
                 </motion.div>
             ) : (
                 <>
-                    {/* Form Header */}
+                    {/* FORM HEADER */}
                     <div className="mb-8">
-                        <div className="flex items-center gap-4">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10 text-blue-400">
+                        <div className="flex items-center gap-4 ">
+                            {/* Icon */}
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                            >
                                 <Mail size={23} />
                             </div>
 
+                            {/* Heading */}
                             <div>
-                                <h3
-                                    className={`text-2xl font-bold ${
-                                        darkMode
-                                            ? "text-dark-heading"
-                                            : "text-light-heading"
-                                    }`}
-                                >
+                                <h3 className="text-xl font-bold text-heading sm:text-2xl">
                                     Send a Message
                                 </h3>
 
-                                <p className="mt-1 text-sm text-slate-500">
+                                <p className="mt-1 text-sm text-muted">
                                     Tell me about your project or idea.
                                 </p>
                             </div>
                         </div>
                     </div>
 
+                    {/*FORM*/}
                     <form
                         onSubmit={handleSubmit}
                         className="space-y-5"
                     >
                         {/* Name + Email */}
                         <div className="grid gap-5 md:grid-cols-2">
+
                             {/* Name */}
                             <div>
-                                <label
-                                    htmlFor="name"
-                                    className={`mb-2 block text-sm font-medium ${
-                                        darkMode
-                                            ? "text-dark-heading"
-                                            : "text-light-heading"
-                                    }`}
-                                >
+                                <label htmlFor="name" className="mb-2 block text-sm font-medium text-heading">
                                     Name
                                 </label>
 
@@ -266,15 +204,11 @@ ${formData.message}
                                     value={formData.name}
                                     onChange={handleChange}
                                     placeholder="Your name"
-                                    className={`${inputClass} ${
-                                        darkMode
-                                            ? "bg-slate-900/60 border-dark-border text-white placeholder:text-slate-600"
-                                            : "bg-white border-light-border text-slate-900 placeholder:text-slate-400"
-                                    }`}
+                                    className={inputClass}
                                 />
 
                                 {errors.name && (
-                                    <p className="mt-1 text-sm text-red-400">
+                                    <p className="mt-1.5 text-sm text-secondary">
                                         {errors.name}
                                     </p>
                                 )}
@@ -282,14 +216,8 @@ ${formData.message}
 
                             {/* Email */}
                             <div>
-                                <label
-                                    htmlFor="email"
-                                    className={`mb-2 block text-sm font-medium ${
-                                        darkMode
-                                            ? "text-dark-heading"
-                                            : "text-light-heading"
-                                    }`}
-                                >
+                                <label htmlFor="email"
+                                    className="mb-2 block text-sm font-medium text-heading">
                                     Email
                                 </label>
 
@@ -300,31 +228,21 @@ ${formData.message}
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder="you@example.com"
-                                    className={`${inputClass} ${
-                                        darkMode
-                                            ? "bg-slate-900/60 border-dark-border text-white placeholder:text-slate-600"
-                                            : "bg-white border-light-border text-slate-900 placeholder:text-slate-400"
-                                    }`}
+                                    className={inputClass}
                                 />
 
                                 {errors.email && (
-                                    <p className="mt-1 text-sm text-red-400">
+                                    <p className="mt-1.5 text-sm text-secondary">
                                         {errors.email}
                                     </p>
                                 )}
                             </div>
                         </div>
 
-                        {/* Subject */}
+                        {/*SUBJECT*/}
                         <div>
-                            <label
-                                htmlFor="subject"
-                                className={`mb-2 block text-sm font-medium ${
-                                    darkMode
-                                        ? "text-dark-heading"
-                                        : "text-light-heading"
-                                }`}
-                            >
+                            <label htmlFor="subject"
+                                className="mb-2 block text-sm font-medium text-heading">
                                 Subject
                             </label>
 
@@ -335,30 +253,19 @@ ${formData.message}
                                 value={formData.subject}
                                 onChange={handleChange}
                                 placeholder="Project inquiry"
-                                className={`${inputClass} ${
-                                    darkMode
-                                        ? "bg-slate-900/60 border-dark-border text-white placeholder:text-slate-600"
-                                        : "bg-white border-light-border text-slate-900 placeholder:text-slate-400"
-                                }`}
+                                className={inputClass}
                             />
 
                             {errors.subject && (
-                                <p className="mt-1 text-sm text-red-400">
+                                <p className="mt-1.5 text-sm text-secondary">
                                     {errors.subject}
                                 </p>
                             )}
                         </div>
 
-                        {/* Message */}
+                        {/* MESSAGE */}
                         <div>
-                            <label
-                                htmlFor="message"
-                                className={`mb-2 block text-sm font-medium ${
-                                    darkMode
-                                        ? "text-dark-heading"
-                                        : "text-light-heading"
-                                }`}
-                            >
+                            <label htmlFor="message" className="mb-2 block text-sm font-medium text-heading">
                                 Message
                             </label>
 
@@ -369,77 +276,37 @@ ${formData.message}
                                 value={formData.message}
                                 onChange={handleChange}
                                 placeholder="Tell me a little about your project..."
-                                className={`${inputClass} resize-none ${
-                                    darkMode
-                                        ? "bg-slate-900/60 border-dark-border text-white placeholder:text-slate-600"
-                                        : "bg-white border-light-border text-slate-900 placeholder:text-slate-400"
-                                }`}
+                                className={`${inputClass} resize-none`}
                             />
 
                             {errors.message && (
-                                <p className="mt-1 text-sm text-red-400">
+                                <p className="mt-1.5 text-sm text-secondary">
                                     {errors.message}
                                 </p>
                             )}
                         </div>
 
-                        {/* WhatsApp Notice */}
-                        <div
-                            className={`flex items-start gap-3 rounded-2xl border p-4 ${
-                                darkMode
-                                    ? "border-green-500/20 bg-green-500/5"
-                                    : "border-green-500/20 bg-green-50"
-                            }`}
-                        >
-                            <MessageCircle
-                                size={20}
-                                className="mt-0.5 shrink-0 text-green-500"
-                            />
-
+                        {/* WHATSAPP NOTICE*/}
+                        <div className="flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 ">
+                            <MessageCircle size={20} className="mt-0.5 shrink-0 text-primary "/>
                             <div>
-                                <p
-                                    className={`text-sm font-semibold ${
-                                        darkMode
-                                            ? "text-slate-200"
-                                            : "text-slate-800"
-                                    }`}
-                                >
+                                <p className="text-sm font-semibold text-heading">
                                     Messages are sent through WhatsApp
                                 </p>
 
-                                <p className="mt-1 text-xs leading-5 text-slate-500">
+                                <p className="mt-1 text-xs leading-5 text-muted">
                                     After submitting, WhatsApp will open with
                                     your message already prepared.
                                 </p>
                             </div>
                         </div>
 
-                        {/* Submit */}
+                        {/* SUBMIT BUTTON*/}
                         <button
                             type="submit"
-                            className="
-                                flex
-                                w-full
-                                items-center
-                                justify-center
-                                gap-2
-                                rounded-xl
-                                bg-blue-600
-                                px-6
-                                py-3.5
-                                font-semibold
-                                text-white
-                                shadow-lg
-                                shadow-blue-500/20
-                                transition-all
-                                duration-300
-                                hover:-translate-y-0.5
-                                hover:bg-blue-700
-                                hover:shadow-blue-500/30
-                            "
+                            className=" flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-primary/30"
                         >
                             <Send size={18} />
-
                             Send Message
                         </button>
                     </form>

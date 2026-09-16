@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
@@ -11,35 +11,35 @@ import Testimonials from "./components/Testimonials.jsx";
 function App() {
     const [darkMode, setDarkMode] = useState(true);
 
+    useEffect(() => {
+        document.documentElement.classList.toggle("dark", darkMode);
+    }, [darkMode]);
+
     const toggleDarkMode = () => {
         setDarkMode((previous) => !previous);
     };
 
     return (
-        <div
-            className={`min-h-screen transition-colors duration-500 ${
-                darkMode ? "bg-slate-950 text-white" : "bg-white text-slate-900"
-            }`}
-        >
+        <>
             <Navbar
                 darkMode={darkMode}
                 toggleDarkMode={toggleDarkMode}
             />
 
             <main>
-                <Hero darkMode={darkMode} />
+                <Hero />
 
-                <Skills darkMode={darkMode} />
+                <Skills />
 
-                <Projects darkMode={darkMode} />
+                <Projects />
 
-                <Testimonials darkMode={darkMode} />
+                <Testimonials />
 
-                <Contact darkMode={darkMode} />
+                <Contact />
             </main>
 
-            <Footer darkMode={darkMode} />
-        </div>
+            <Footer />
+        </>
     );
 }
 

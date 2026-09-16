@@ -1,44 +1,66 @@
 /* 1. Import Tailwind (this replaces @tailwind base/components/utilities) */
 @import "tailwindcss";
 
-/* 2. Your Custom Theme (replaces tailwind.config.js) */
+/* =========================
+   BRAND COLORS (Never change)F98D58 AC6846 B1643E
+   ========================= */
 @theme {
-    /* Define your primary blue palette */
-    --color-primary-50: #eff6ff;
-    --color-primary-100: #dbeafe;
-    --color-primary-200: #bfdbfe;
-    --color-primary-300: #93c5fd;
-    --color-primary-400: #60a5fa;
-    --color-primary-500: #3b82f6;
-    --color-primary-600: #2563eb;
-    --color-primary-700: #1d4ed8;
-    --color-primary-800: #1e40af;
-    --color-primary-900: #1e3a8a;
+    --color-primary: #BF5927;
+    --color-primary-dark: #F98D58;
 
-    /* Define your dark backgrounds */
-    --color-dark-900: #0a0f1e;
-    --color-dark-800: #111827;
-    --color-dark-700: #1a2235;
-    --color-dark-600: #1f2937;
+    --color-secondary: #B91C1C;
+    --color-tertiary: #F97316;
+    --color-accent: #059669;
+    --color-gold: #F59E0B;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-sand: #DFB6A1;
 
-    /* Define your fonts */
-    --font-sans: 'Inter', system-ui, sans-serif;
-    --font-mono: 'Fira Code', monospace;
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-mono: "Fira Code", monospace;
 
-    /* Optional: custom animations */
-    --animate-glow: glow 3s ease-in-out infinite;
+    /* Semantic tokens exposed as Tailwind utilities */
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-surface-hover: var(--surface-hover);
+    --color-border: var(--border);
+
+    --color-heading: var(--heading);
+    --color-paragraph: var(--paragraph);
+    --color-muted: var(--muted);
 }
 
-/* 3. Keyframes (can still live in CSS) */
-@keyframes glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(37, 99, 235, 0.6); }
+/* =========================
+   LIGHT MODE (default)//FFF9F6
+   ========================= */
+:root {
+    --background: #F9FAFB;
+    --surface: #FFFFFF;
+    --surface-hover: #FFF1EB;
+    --border: #F1E5DD;
+
+    --heading: #1F2937;
+    --paragraph: #475569;
+    --muted: #64748B;
 }
 
-/* 4. Your existing custom classes (if needed) */
+/* =========================
+   DARK MODE (only overrides)060B16
+   ========================= */
+.dark {
+    --background: #0D172C;
+    --surface: #0F172A;
+    --surface-hover: #16213A;
+    --border: #1E293B;
+
+    --heading: #F8FAFC;
+    --paragraph: #CBD5E1;
+    --muted: #94A3B8;
+}
+
 @layer base {
-    html { scroll-behavior: smooth; }
-    /*body {*/
-    /*    @apply bg-gray-100 text-black antialiased;*/
-    /*}*/
+    html {
+        scroll-behavior: smooth;
+        font-family: var(--font-sans);
+    }
 }

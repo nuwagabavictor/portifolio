@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
-import {
-    Menu,
-    X,
-    Code2,
-    Sun,
-    Moon,
-} from "lucide-react";
+import {Menu, X, Sun, Moon} from "lucide-react";
+import image from "../assets/favicon.png"
 
 const links = [
     { label: "Home", href: "#home" },
@@ -43,6 +38,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
         };
 
         window.addEventListener("scroll", handleScroll);
+
         handleScroll();
 
         return () =>
@@ -50,76 +46,67 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     }, []);
 
     return (
-        <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-                scrolled
-                    ? darkMode
-                        ? "bg-slate-950/80 backdrop-blur-xl border-b border-slate-800 shadow-lg"
-                        : "bg-white/80 backdrop-blur-xl border-b border-slate-200 shadow-lg"
-                    : "bg-transparent"
-            }`}
+        <header className={` fixed top-0 left-0 w-full z-50 transition-all duration-300
+                ${scrolled  ? "bg-background/85 backdrop-blur-xl border-b border-border shadow-lg" : "bg-transparent"}
+            `}
         >
-            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between">
+
                 {/* Logo */}
                 <a
                     href="#home"
-                    className="flex items-center gap-2 group"
+                    className="flex items-center gap-2.5 group"
                 >
-                    <div className="h-10 w-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-600/30">
-                        <Code2 size={22} />
+                    {/* Logo Image */}
+                    <div className=" h-10 w-10 rounded-xl overflow-hidden border border-primary/30 bg-primary/10 flex items-center
+                        justify-center transition-all duration-300 group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/20
+                        "
+                    >
+                        <img  src={image} alt="Victor.Dev" className=" h-full w-full object-cover "/>
                     </div>
 
+                    {/* Brand Name */}
                     <div className="leading-none">
-                        <h1 className="font-bold text-lg text-blue-500">
+                        <h1 className="font-bold text-lg text-primary tracking-tight ">
                             Victor.Dev
                         </h1>
 
-                        <p
-                            className={`text-xs ${
-                                darkMode
-                                    ? "text-slate-400"
-                                    : "text-slate-500"
-                            }`}
-                        >
-                            Software Engineer
+                        <p className="text-xs text-muted mt-1">
+                            Software Developer
                         </p>
                     </div>
                 </a>
 
-                {/* Desktop Menu */}
+                {/*DESKTOP NAVIGATION*/}
                 <nav className="hidden md:flex items-center gap-8">
                     {links.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
-                            className={`relative text-sm font-medium transition-colors ${
-                                active === link.href
-                                    ? "text-blue-500"
-                                    : darkMode
-                                        ? "text-slate-300 hover:text-blue-400"
-                                        : "text-slate-700 hover:text-blue-500"
-                            }`}
+                            className={` relative font-bold transition-colors duration-300 text-lg
+                                       ${active === link.href ? "text-primary" : "text-paragraph hover:text-primary"}
+                            `}
                         >
                             {link.label}
 
+                            {/* Active Indicator */}
                             {active === link.href && (
-                                <span className="absolute left-0 -bottom-2 w-full h-[2px] rounded-full bg-blue-500" />
+                                <span className=" absolute left-0 -bottom-2 w-full h-[2px] rounded-full bg-primary"/>
                             )}
                         </a>
                     ))}
                 </nav>
 
-                {/* Right Side */}
-                <div className="flex items-center gap-3">
-                    {/* Theme Toggle */}
+                {/*RIGHT SIDE*/}
+                <div className="flex items-center gap-2 sm:gap-3">
+
+                    {/* DESKTOP THEME TOGGLE */}
                     <button
                         onClick={toggleDarkMode}
-                        className={`hidden md:flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 ${
-                            darkMode
-                                ? "bg-slate-900 border border-slate-700 text-yellow-400 hover:bg-slate-800"
-                                : "bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200"
-                        }`}
-                    >
+                        aria-label={ darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                        className=" hidden md:flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-surface text-heading transition-all
+                                    duration-300 hover:border-primary hover:text-primary hover:bg-primary/10 ">
+
                         {darkMode ? (
                             <Sun size={20} />
                         ) : (
@@ -127,23 +114,15 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                         )}
                     </button>
 
-                    {/* Hire Me Button */}
-                    <a
-                        href="#contact"
-                        className="hidden md:flex px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-0.5"
-                    >
-                        Hire Me
-                    </a>
 
-                    {/* Mobile Theme Toggle */}
+                    {/* MOBILE THEME TOGGLE*/}
                     <button
                         onClick={toggleDarkMode}
-                        className={`md:hidden h-10 w-10 flex items-center justify-center rounded-lg ${
-                            darkMode
-                                ? "bg-slate-900 text-yellow-400"
-                                : "bg-slate-100 text-slate-700"
-                        }`}
-                    >
+                        aria-label={ darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                        className=" md:hidden h-10 w-10 flex items-center justify-center rounded-lg border border-border bg-surface
+                                    text-heading transition-all duration-300 hover:border-primary hover:text-primary hover:bg-primary/10
+                        ">
+
                         {darkMode ? (
                             <Sun size={18} />
                         ) : (
@@ -151,14 +130,13 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                         )}
                     </button>
 
-                    {/* Mobile Menu Button */}
+                    {/*MOBILE MENU BUTTON*/}
                     <button
                         onClick={() => setOpen(!open)}
-                        className={`md:hidden h-10 w-10 flex items-center justify-center rounded-lg ${
-                            darkMode
-                                ? "text-white hover:bg-slate-800"
-                                : "text-slate-900 hover:bg-slate-100"
-                        }`}
+                        aria-label={ open ? "Close navigation menu" : "Open navigation menu"}
+                        className="md:hidden h-10 w-10 flex items-center justify-center rounded-lg border border-border
+                                   bg-surface text-heading transition-all duration-300 hover:border-primary hover:text-primary hover:bg-primary/10
+                        "
                     >
                         {open ? (
                             <X size={22} />
@@ -169,42 +147,30 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
+            {/*MOBILE MENU*/}
             <div
-                className={`md:hidden overflow-hidden transition-all duration-300 ${
-                    open ? "max-h-96" : "max-h-0"
-                } ${
-                    darkMode
-                        ? "bg-slate-950/95 border-t border-slate-800"
-                        : "bg-white/95 border-t border-slate-200"
-                } backdrop-blur-xl`}
+                className={` md:hidden overflow-hidden transition-all duration-300
+                    ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
+                `}
             >
-                <nav className="flex flex-col p-6 gap-4">
-                    {links.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            onClick={() => setOpen(false)}
-                            className={`rounded-lg px-4 py-3 font-medium transition ${
-                                active === link.href
-                                    ? "bg-blue-600 text-white"
-                                    : darkMode
-                                        ? "text-slate-300 hover:bg-slate-900 hover:text-blue-400"
-                                        : "text-slate-700 hover:bg-slate-100 hover:text-blue-500"
-                            }`}
-                        >
-                            {link.label}
-                        </a>
-                    ))}
+                <div className="bg-background/95 backdrop-blur-xl border-t border-border">
+                    <nav className="flex flex-col p-4 sm:p-6 gap-2">
 
-                    <a
-                        href="#contact"
-                        onClick={() => setOpen(false)}
-                        className="mt-2 rounded-xl bg-blue-600 py-3 text-center font-semibold text-white hover:bg-blue-700 transition"
-                    >
-                        Hire Me
-                    </a>
-                </nav>
+                        {links.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                onClick={() => setOpen(false)}
+                                className={` rounded-xl px-4 py-3 font-medium transition-all duration-300
+                                            ${active === link.href ? "bg-primary text-white shadow-md shadow-primary/20" : "text-paragraph hover:bg-primary/10 hover:text-primary"}
+                                `}
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+
+                    </nav>
+                </div>
             </div>
         </header>
     );

@@ -1,117 +1,96 @@
 import { Quote, Star } from "lucide-react";
-import {testimonials} from "../data/portifolio.jsx";
+import { testimonials } from "../data/portifolio.jsx";
 
-
-const Testimonials = ({ darkMode }) => {
+const Testimonials = () => {
     return (
-        <section
-            className={`py-20 transition-colors duration-500 ${
-                darkMode ? "bg-dark-bg" : "bg-light-bg"
-            }`}
-        >
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="testimonials" className="bg-background py-20 transition-colors duration-500 sm:py-24">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-                {/* Heading */}
-                <div className="text-center mb-12">
-                    <p className="text-blue-400 text-sm font-semibold uppercase tracking-[3px]">
+                {/* SECTION HEADER */}
+                <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14">
+
+                    <p className="text-xs font-semibold uppercase tracking-[3px] text-primary sm:text-sm sm:tracking-[4px]">
                         Testimonials
                     </p>
 
-                    <h2
-                        className={`mt-2 text-3xl md:text-4xl font-bold ${
-                            darkMode
-                                ? "text-dark-heading"
-                                : "text-light-heading"
-                        }`}
-                    >
+                    <h2 className="mt-3 text-3xl font-bold tracking-tight text-heading sm:text-4xl md:text-5xl">
                         What Clients Say
                     </h2>
 
-                    <p
-                        className={`mt-4 max-w-2xl mx-auto text-base leading-7 ${
-                            darkMode
-                                ? "text-dark-paragraph"
-                                : "text-light-paragraph"
-                        }`}
-                    >
+                    <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-paragraph sm:mt-5 sm:text-base sm:leading-8">
                         Feedback from people I've had the opportunity to work
                         with.
                     </p>
                 </div>
 
-                {/* Testimonials */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/*TESTIMONIALS */}
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+
                     {testimonials.map((testimonial) => (
                         <div
                             key={`${testimonial.name}-${testimonial.company}`}
-                            className={`relative rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 ${
-                                darkMode
-                                    ? "bg-dark-card border-dark-border hover:border-blue-500/50"
-                                    : "bg-light-card border-light-border hover:border-blue-500/50"
-                            }`}
+                            className="group relative rounded-2xl border border-border bg-surface p-6 shadow-lg shadow-black/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 sm:rounded-3xl sm:p-7"
                         >
-                            {/* Quote */}
-                            <div className="flex items-center justify-between">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/10 text-blue-400">
-                                    <Quote size={20} />
-                                </div>
+                            {/* Decorative Glow */}
+                            <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/5 blur-3xl transition-all duration-500 group-hover:bg-primary/10" />
 
-                                <div className="flex gap-0.5">
-                                    {[1, 2, 3, 4, 5].map((star) => (
-                                        <Star
-                                            key={star}
-                                            size={14}
-                                            className="fill-blue-500 text-blue-500"
-                                        />
-                                    ))}
-                                </div>
-                            </div>
+                            <div className="relative">
 
-                            {/* Message */}
-                            <p
-                                className={`mt-5 text-sm leading-7 ${
-                                    darkMode
-                                        ? "text-slate-300"
-                                        : "text-slate-600"
-                                }`}
-                            >
-                                "{testimonial.message}"
-                            </p>
+                                {/* =========================
+                                    QUOTE + RATING
+                                ========================= */}
+                                <div className="flex items-center justify-between gap-4">
 
-                            {/* Client */}
-                            <div
-                                className={`mt-6 pt-5 border-t flex items-center gap-3 ${
-                                    darkMode
-                                        ? "border-slate-800"
-                                        : "border-slate-200"
-                                }`}
-                            >
-                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
-                                    {testimonial.initials}
-                                </div>
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                        <Quote size={21} />
+                                    </div>
 
-                                <div>
-                                    <h3
-                                        className={`text-sm font-semibold ${
-                                            darkMode
-                                                ? "text-dark-heading"
-                                                : "text-light-heading"
-                                        }`}
+                                    <div
+                                        className="flex gap-0.5"
+                                        aria-label="5 out of 5 stars"
                                     >
-                                        {testimonial.name}
-                                    </h3>
+                                        {[1, 2, 3, 4, 5].map((star) => (
+                                            <Star
+                                                key={star}
+                                                size={14}
+                                                className="fill-gold text-gold"
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
 
-                                    <p className="text-xs text-slate-500 mt-0.5">
-                                        {testimonial.role}
-                                    </p>
+                                {/* MESSAGE*/}
+                                <p className="mt-6 text-sm leading-7 text-paragraph">
+                                    "{testimonial.message}"
+                                </p>
 
-                                    <p className="text-xs text-blue-400 mt-0.5">
-                                        {testimonial.company}
-                                    </p>
+                                {/*CLIENT*/}
+                                <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
+
+                                    {/* Initials */}
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
+                                        {testimonial.initials}
+                                    </div>
+
+                                    {/* Client Details */}
+                                    <div className="min-w-0">
+                                        <h3 className="truncate text-sm font-semibold text-heading">
+                                            {testimonial.name}
+                                        </h3>
+
+                                        <p className="mt-0.5 text-xs text-muted">
+                                            {testimonial.role}
+                                        </p>
+
+                                        <p className="mt-0.5 text-xs font-medium text-primary">
+                                            {testimonial.company}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     ))}
+
                 </div>
             </div>
         </section>
