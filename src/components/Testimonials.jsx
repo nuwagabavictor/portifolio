@@ -24,7 +24,7 @@ const Testimonials = () => {
                 </div>
 
                 {/*TESTIMONIALS */}
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
 
                     {testimonials.map((testimonial) => (
                         <div
@@ -36,12 +36,10 @@ const Testimonials = () => {
 
                             <div className="relative">
 
-                                {/* =========================
-                                    QUOTE + RATING
-                                ========================= */}
+                                {/* QUOTE + RATING*/}
                                 <div className="flex items-center justify-between gap-4">
 
-                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-dark text-white transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                                         <Quote size={21} />
                                     </div>
 
@@ -53,7 +51,7 @@ const Testimonials = () => {
                                             <Star
                                                 key={star}
                                                 size={14}
-                                                className="fill-gold text-gold"
+                                                className="fill-gold text-white transition-all duration-300 group-hover:fill-primary"
                                             />
                                         ))}
                                     </div>
@@ -68,7 +66,7 @@ const Testimonials = () => {
                                 <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
 
                                     {/* Initials */}
-                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
                                         {testimonial.initials}
                                     </div>
 

@@ -18,8 +18,9 @@ const filters = [
     "All",
     "FinTech",
     "ERP",
-    "Backend",
+    "Web App",
     "Mobile",
+    "Website"
 ];
 
 const categoryIcons = {
@@ -27,6 +28,7 @@ const categoryIcons = {
     ERP: Database,
     Backend: Server,
     Mobile: Smartphone,
+    Website: Globe,
 };
 
 const Projects = () => {
@@ -152,19 +154,19 @@ const Projects = () => {
                             className="grid grid-cols-1 lg:grid-cols-2"
                         >
                             {/*PROJECT IMAGE*/}
-                            <div className="relative min-h-[400px] overflow-hidden sm:min-h-[400px] lg:min-h-[560px]">
+                            <div className="relative flex min-h-[320px] items-center justify-center overflow-hidden bg-background p-4 sm:min-h-[400px] lg:min-h-[560px] lg:p-6">
                                 <img
                                     src={currentProject.image}
                                     alt={currentProject.title}
-                                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105 "
+                                    className="h-full w-full object-contain transition-transform duration-700 hover:scale-[1.02]"
                                 />
 
-                                {/* Image Overlay */}
-                                <div className="absolute inset-0 "/>
+                                {/* Soft gradient so text overlays remain readable */}
+                                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
 
                                 {/* Category */}
                                 <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
-                                    <div className="flex items-center gap-2 rounded-full border border-white/10 bg-accent/10 px-3 py-2 text-xs font-medium text-white backdrop-blur-md sm:px-4 sm:text-sm ">
+                                    <div className="flex items-center gap-2 rounded-full border border-white/10 bg-accent px-3 py-2 text-xs font-medium text-white backdrop-blur-md sm:px-4 sm:text-sm ">
                                         <Icon size={20} />
                                         {currentProject.category}
                                     </div>

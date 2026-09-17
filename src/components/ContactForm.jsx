@@ -287,8 +287,8 @@ ${formData.message}
                         </div>
 
                         {/* WHATSAPP NOTICE*/}
-                        <div className="flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 ">
-                            <MessageCircle size={20} className="mt-0.5 shrink-0 text-primary "/>
+                        <div className="flex items-start gap-3 rounded-2xl border border-accent/20 bg-accent/5 p-4 ">
+                            <MessageCircle size={20} className="mt-0.5 shrink-0 text-accent "/>
                             <div>
                                 <p className="text-sm font-semibold text-heading">
                                     Messages are sent through WhatsApp

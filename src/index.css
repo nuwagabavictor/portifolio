@@ -45,11 +45,11 @@
 }
 
 /* =========================
-   DARK MODE (only overrides)060B16
+   DARK MODE (only overrides)060B16 0D172C 1B1918 393330  sur0F172A
    ========================= */
 .dark {
-    --background: #0D172C;
-    --surface: #0F172A;
+    --background: #171716;
+    --surface: #0A0909;
     --surface-hover: #16213A;
     --border: #1E293B;
 

@@ -72,9 +72,7 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            {/* =========================
-                                CONTACT DETAILS
-                            ========================= */}
+                            {/*CONTACT DETAILS */}
                             <div className="space-y-3 sm:space-y-4">
 
                                 {contacts.map(
@@ -158,7 +156,7 @@ const Contact = () => {
 
                                         {/* GitHub */}
                                         <a
-                                            href="https://github.com/nuwagaba"
+                                            href="https://github.com/nuwagabavictor"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label="GitHub"
@@ -169,7 +167,7 @@ const Contact = () => {
 
                                         {/* LinkedIn */}
                                         <a
-                                            href="https://linkedin.com/in/victornuwagaba"
+                                            href="https://linkedin.com/in/victor-nuwagaba-047487248"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label="LinkedIn"

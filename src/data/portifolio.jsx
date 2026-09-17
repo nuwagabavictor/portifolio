@@ -6,8 +6,10 @@ import {
     Code2,
     Cloud, Mail, MessageCircle, MapPin,
 } from "lucide-react";
-import img from "../assets/img.png"
-import img2 from "../assets/img_1.png"
+import lento from "../assets/lento.png"
+import finmark from "../assets/finmark.png"
+import bivas from "../assets/bivas.png"
+import mobility from "../assets/mobility.png"
 
 
 export const personalInfo = {
@@ -61,7 +63,6 @@ export const skillGroups = [
             "Compose Multiplatform",
             "Ktor",
             "MVVM Architecture",
-            "Koin DI",
         ],
     },
     {
@@ -86,7 +87,7 @@ export const skillGroups = [
             "Docker",
             "Nginx",
             "HestiaCP",
-            "GitHub Actions",
+            "CI/CD",
             "PM2",
             "SSL / HTTPS",
         ],
@@ -100,7 +101,7 @@ export const skillGroups = [
             "DNS",
             "Reverse Proxy",
             "SSH",
-            "Ubuntu Server",
+            "Server Management",
             "Systemd Services",
             "Firewall Configuration",
         ],
@@ -113,7 +114,7 @@ export const projects = [
         title: "Lento FinMark ERP",
         subtitle: "Enterprise Resource Planning Platform",
         category: "ERP",
-        image: img,
+        image: finmark,
         description:
             "A multi-tenant ERP platform supporting Finance, Education, Inventory, HR and Commerce modules for schools and businesses.",
 
@@ -130,12 +131,11 @@ export const projects = [
             "Java 17",
             "React",
             "MariaDB",
-            "Liquibase",
-            "JWT"
+            "Docker",
         ],
 
         github: "",
-        live: "https://lento.com"
+        live: "https://lentofinmark.com/login"
     },
 
     {
@@ -167,15 +167,17 @@ export const projects = [
     },
 
     {
-        title: "Bivas Mobility Backend",
-        subtitle: "Transport & Mobility REST API",
-        category: "Backend",
-        image: img2,
+        title: "Bivas Mobility",
+        subtitle: "Transport & Mobility Web App",
+        category: "Web App",
+        image: mobility,
         description:
             "Node.js backend powering a mobility platform with authentication, categories, uploads and user management.",
 
         highlights: [
             "JWT authentication and refresh tokens.",
+            "Fuel Management and Tracking",
+            "User management, roles, and permissions.",
             "Cloudflare R2 storage.",
             "TypeORM + PostgreSQL.",
             "REST API architecture."
@@ -194,10 +196,10 @@ export const projects = [
     },
 
     {
-        title: "Restart Expense Tracker",
+        title: "Expense Tracker",
         subtitle: "Personal Finance Mobile App",
         category: "Mobile",
-        image: img,
+        image: "image",
         description:
             "A Kotlin Compose Multiplatform mobile app for tracking income, expenses and spending analytics.",
 
@@ -217,36 +219,93 @@ export const projects = [
             "PostgreSQL"
         ],
 
-        github: "",
+        github: "https://github.com/nuwagabavictor/restart-mobile.git",
         live: ""
+    },
+    {
+        title: "LentoFinMark",
+        subtitle: "Software Company Portfolio Website",
+        category: "Website",
+        image: lento,
+
+        description:
+            "A modern corporate website showcasing the LentoFinMark enterprise platform, its Finance, Education, HR, Inventory, and Commerce solutions, with a focus on product presentation, pricing, and customer onboarding.",
+
+        highlights: [
+            "Responsive landing pages for desktop and mobile.",
+            "Product showcase for ERP and FinTech modules.",
+            "Modern UI with reusable React components.",
+            "Contact and lead generation sections.",
+            "Optimized performance and SEO-ready structure."
+        ],
+
+        tech: [
+            "React",
+            "Tailwind CSS",
+            "JavaScript",
+            "Framer Motion",
+            "Vite"
+        ],
+
+        github: "",
+        live: "https://lentofinmark.com",
+    },
+
+    {
+        title: "Bivas Technologies",
+        subtitle: "Software Company Portfolio Website",
+        category: "Website",
+        image: bivas,
+
+        description:
+            "A professional company website for Bivas Technologies presenting software development services, enterprise solutions, mobile applications, cloud infrastructure, and digital transformation offerings.",
+
+        highlights: [
+            "Clean and responsive business website design.",
+            "Services, projects, and company portfolio pages.",
+            "Interactive contact and inquiry sections.",
+            "Modern animations and smooth navigation.",
+            "Optimized for performance and user experience."
+        ],
+
+        tech: [
+            "React",
+            "Tailwind CSS",
+            "JavaScript",
+            "Framer Motion",
+            "Vite"
+        ],
+
+        github: "",
+        live: "https://bivastechnologies.com",
     }
 ];
 
 export const testimonials = [
     {
-        name: "Client Name",
-        role: "Project Manager",
-        company: "Company Name",
-        initials: "CN",
+        name: "Kamakalha Alfred",
+        role: "Founder & CEO",
+        company: "LentoFinmark Ltd",
+        initials: "KA",
         message:
             "Victor demonstrated strong technical ability and a clear understanding of the project requirements. He was able to turn complex requirements into practical software solutions.",
     },
     {
-        name: "Client Name",
-        role: "Technology Lead",
-        company: "Company Name",
+        name: "Juuko Jackson",
+        role: "Founder & CEO",
+        company: "Bivastechnologies Ltd",
         initials: "CN",
         message:
             "Working with Victor was a great experience. He approached technical challenges professionally and consistently focused on building reliable and maintainable solutions.",
     },
-    {
-        name: "Client Name",
-        role: "Business Owner",
-        company: "Company Name",
-        initials: "CN",
-        message:
-            "Victor understood our needs and translated them into a working solution. His attention to detail and willingness to solve problems made the project much easier to deliver.",
-    },
+    // {
+    //     name: "Client Name",
+    //     role: "Business Owner",
+    //     company: "Company Name",
+    //     initials: "CN",
+    //     message:
+    //         "Victor understood our needs and translated them into a working solution. His attention to detail and willingness to solve problems made the project much easier to deliver.",
+    // },
 ];
 
 export const coreTechnologies = [
@@ -280,7 +339,7 @@ export const contacts = [
     {
         icon: MessageCircle,
         label: "WhatsApp",
-        value: "+256 770 7599 15 / +256 742 292 621",
+        value: "+256 770 7599 15",
         href: "https://wa.me/256770759915",
     },
     {
