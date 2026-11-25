@@ -10,6 +10,7 @@ import lento from "../assets/lento.png"
 import finmark from "../assets/finmark.png"
 import bivas from "../assets/bivas.png"
 import mobility from "../assets/mobility.png"
+import swan from "../assets/swan.png"
 
 
 export const personalInfo = {
@@ -135,7 +136,7 @@ export const projects = [
         ],
 
         github: "",
-        live: "https://lentofinmark.com/login"
+        live: "https://nesfinmark.lentofinmark.com/login"
     },
 
     {
@@ -278,6 +279,34 @@ export const projects = [
 
         github: "",
         live: "https://bivastechnologies.com",
+    },
+    {
+        title: "SwanSerenity",
+        subtitle: "Software Company Portfolio Website",
+        category: "Website",
+        image: swan,
+
+        description:
+            "A professional company website for Swan Serenity Company dealing in Fumigation, Cleaning services and Pest Control.",
+
+        highlights: [
+            "Clean and responsive business website design.",
+            "Services, projects, and company portfolio pages.",
+            "Interactive contact and inquiry sections.",
+            "Modern animations and smooth navigation.",
+            "Optimized for performance and user experience."
+        ],
+
+        tech: [
+            "React",
+            "Tailwind CSS",
+            "JavaScript",
+            "Framer Motion",
+            "Vite"
+        ],
+
+        github: "",
+        live: "https://swanserenity.com",
     }
 ];
 
